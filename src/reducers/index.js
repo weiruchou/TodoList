@@ -1,14 +1,10 @@
-export default (state = [], action) => {
-    switch (action.type) {
-      case 'ADDTODO':
-      return [{
-        id: action.test.id++,
-        text: action.test.text,
-      }, ...state]
-      case 'DELTODO':
-        return state.filter(item => item.id !== action.id)
-      default:
-        return state
-    }
-  }
-  
+import { combineReducers } from 'redux';
+import items from './items';
+import filterItems from './filterItems';
+
+  const itemApp = combineReducers({
+    items,
+    filterItems,
+  })
+
+  export default itemApp
