@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as actionCreators from '../actions/action';
 import { connect } from 'react-redux';
+import '../css/style.css'
 
 class List extends React.Component {
   constructor(props) {
@@ -31,29 +32,33 @@ class List extends React.Component {
             ? <div>
                 <li 
                 key= {item.id}
-                style= {{
+                /* style= {{
                   textDecoration: item.completed ? 'line-through' : 'none', 
                   color: item.completed ? 'red' : '',
                   display: 'inline-flex',
                   marginRight: '10px'
-                }}
+                }} */
+                className= {item.completed ? 'completed' : 'uncompleted' }
                 onClick= {toggleTodo.bind(this,item.id)}
                 >
                 {item.text}
                 </li>
                 <input type="text" 
-                style= {{display: item.edited ? '' : 'none'}}
+                /* style= {{display: item.edited ? '' : 'none'}} */
+                className= {item.edited ? 'inputAndSureEdited' : 'inputAndSureNotEdited' }
                 value= {this.state.updateInput}
                 onChange= {this.handleUpdateInput.bind(this)}
                 />
                 <button
-                style= {{display: item.edited ? '' : 'none'}}
+                /* style= {{display: item.edited ? '' : 'none'}} */
+                className= {item.edited ? 'inputAndSureEdited' : 'inputAndSureNotEdited' }
                 onClick= {this.handleOnClickSureButton.bind(this,item)}
                 >
                   確定
                 </button>
                 <button
-                style= {{display: item.edited ? 'none' : ''}}
+                /* style= {{display: item.edited ? 'none' : ''}} */
+                className= {item.edited ? 'edited' : 'Notedited' }
                 onClick= {editTodo.bind(this,item.id)}
                 >
                   修改

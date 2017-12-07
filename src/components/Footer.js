@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 class Footer extends React.Component {
     render() {
         const { items , filterItems , filterItemsAll , filterItemsCompleted , filterItemsUnDone } = this.props
-        console.log(filterItems)
         return (
           <p>
           顯示：
