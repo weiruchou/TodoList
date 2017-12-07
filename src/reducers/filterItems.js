@@ -1,18 +1,15 @@
 
-const filterItems = (items, action) => {
+const filterItems = (state = 'SHOWALL', action) => {
     switch (action.type) {
       case 'SHOWALL':
-        return action.item
+        return 'SHOWALL'
       case 'SHOWCOMPLETED':
-        return action.item.filter(item => item.completed)
+        return 'SHOWCOMPLETED'
       case 'SHOWUNDONE':
-        return action.item.filter(item => !item.completed)
+        return 'SHOWUNDONE'
       default:
-        return action
+        return state
     }
   }
-
-
-  
 
   export default filterItems

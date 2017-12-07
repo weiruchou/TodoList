@@ -22,7 +22,11 @@ class Todo extends React.Component {
         return(
             <div>
               <h1>Todo List</h1>
-              <input type="text" placeholder="請輸入待辦事項" value= {this.state.usetInput} onChange={this.handleOnChange.bind(this)}/>
+              <input type="text" 
+                placeholder="請輸入待辦事項" 
+                value= {this.state.usetInput} 
+                onChange={this.handleOnChange.bind(this)}
+              />
               <button onClick={this.handleOnClick.bind(this)}>確定</button>
             </div>
         )

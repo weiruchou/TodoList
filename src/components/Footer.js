@@ -10,17 +10,17 @@ class Footer extends React.Component {
         return (
           <p>
           顯示：
-          <button onClick= {this.props.filterItemsAll.bind(this,items)}>全部</button>
-          <button onClick= {this.props.filterItemsCompleted.bind(this,items)}>完成</button>
-          <button onClick= {this.props.filterItemsUnDone.bind(this,items)}>未完成</button>
+          <button onClick= {this.props.filterItemsAll}>全部</button>
+          <button onClick= {this.props.filterItemsCompleted}>完成</button>
+          <button onClick= {this.props.filterItemsUnDone}>未完成</button>
           </p>
         )
     }
 }
 
-const mapStateToProps = store => (
-    { items: store.items,
-      filterItems: store.filterItems,}
+const mapStateToProps = state => (
+    { items: state.items,
+      filterItems: state.filterItems,}
   )
       
 export default connect(mapStateToProps, actionCreators)(Footer)
